@@ -1,11 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://www.netbeans.org/ns/project/1">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://www.netbeans.org/ns/project/1">
     <type>org.netbeans.modules.apisupport.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
             <code-name-base>au.gov.asd.acsc.constellation.dependencies</code-name-base>
             <suite-component/>
-            <module-dependencies/>
+            <module-dependencies>
+                <dependency>
+                    <code-name-base>au.gov.asd.tac.constellation.dependencies</code-name-base>
+                    <build-prerequisite/>
+                    <compile-dependency/>
+                    <run-dependency>
+                        <specification-version>1.0</specification-version>
+                    </run-dependency>
+                </dependency>
+            </module-dependencies>
             <public-packages>
                 <package>com.fasterxml.jackson.annotation</package>
                 <package>com.fasterxml.jackson.core</package>
@@ -44,12 +52,56 @@
                 <package>com.maxmind.geoip2.exception</package>
                 <package>com.maxmind.geoip2.model</package>
                 <package>com.maxmind.geoip2.record</package>
+                <package>com.sun.istack</package>
+                <package>com.sun.istack.localization</package>
+                <package>com.sun.istack.logging</package>
+                <package>com.sun.xml.bind</package>
+                <package>com.sun.xml.bind.annotation</package>
+                <package>com.sun.xml.bind.api</package>
+                <package>com.sun.xml.bind.api.impl</package>
+                <package>com.sun.xml.bind.marshaller</package>
+                <package>com.sun.xml.bind.unmarshaller</package>
+                <package>com.sun.xml.bind.util</package>
+                <package>com.sun.xml.bind.v2</package>
+                <package>com.sun.xml.bind.v2.bytecode</package>
+                <package>com.sun.xml.bind.v2.model.annotation</package>
+                <package>com.sun.xml.bind.v2.model.core</package>
+                <package>com.sun.xml.bind.v2.model.impl</package>
+                <package>com.sun.xml.bind.v2.model.nav</package>
+                <package>com.sun.xml.bind.v2.model.runtime</package>
+                <package>com.sun.xml.bind.v2.model.util</package>
+                <package>com.sun.xml.bind.v2.runtime</package>
+                <package>com.sun.xml.bind.v2.runtime.output</package>
+                <package>com.sun.xml.bind.v2.runtime.property</package>
+                <package>com.sun.xml.bind.v2.runtime.reflect</package>
+                <package>com.sun.xml.bind.v2.runtime.reflect.opt</package>
+                <package>com.sun.xml.bind.v2.runtime.unmarshaller</package>
+                <package>com.sun.xml.bind.v2.schemagen</package>
+                <package>com.sun.xml.bind.v2.schemagen.episode</package>
+                <package>com.sun.xml.bind.v2.schemagen.xmlschema</package>
+                <package>com.sun.xml.bind.v2.util</package>
+                <package>com.sun.xml.txw2</package>
+                <package>com.sun.xml.txw2.annotation</package>
+                <package>com.sun.xml.txw2.output</package>
+                <package>javax.xml.bind</package>
+                <package>javax.xml.bind.annotation</package>
+                <package>javax.xml.bind.annotation.adapters</package>
+                <package>javax.xml.bind.attachment</package>
+                <package>javax.xml.bind.helpers</package>
+                <package>javax.xml.bind.util</package>
                 <package>org.apache.commons.codec</package>
                 <package>org.apache.commons.codec.binary</package>
                 <package>org.apache.commons.codec.digest</package>
                 <package>org.apache.commons.codec.language</package>
                 <package>org.apache.commons.codec.language.bm</package>
                 <package>org.apache.commons.codec.net</package>
+                <package>org.apache.commons.io</package>
+                <package>org.apache.commons.io.comparator</package>
+                <package>org.apache.commons.io.filefilter</package>
+                <package>org.apache.commons.io.input</package>
+                <package>org.apache.commons.io.monitor</package>
+                <package>org.apache.commons.io.output</package>
+                <package>org.apache.commons.io.serialization</package>
                 <package>org.apache.commons.logging</package>
                 <package>org.apache.commons.logging.impl</package>
                 <package>org.apache.http</package>
@@ -93,22 +145,69 @@
                 <package>org.apache.http.protocol</package>
                 <package>org.apache.http.ssl</package>
                 <package>org.apache.http.util</package>
+                <package>org.apache.nifi.action</package>
+                <package>org.apache.nifi.action.component.details</package>
+                <package>org.apache.nifi.action.details</package>
+                <package>org.apache.nifi.annotation.behavior</package>
+                <package>org.apache.nifi.annotation.configuration</package>
+                <package>org.apache.nifi.annotation.documentation</package>
+                <package>org.apache.nifi.annotation.lifecycle</package>
+                <package>org.apache.nifi.annotation.notification</package>
+                <package>org.apache.nifi.components</package>
+                <package>org.apache.nifi.components.state</package>
+                <package>org.apache.nifi.components.state.exception</package>
+                <package>org.apache.nifi.context</package>
+                <package>org.apache.nifi.controller</package>
+                <package>org.apache.nifi.controller.queue</package>
+                <package>org.apache.nifi.controller.status</package>
+                <package>org.apache.nifi.controller.status.analytics</package>
+                <package>org.apache.nifi.documentation</package>
+                <package>org.apache.nifi.documentation.init</package>
+                <package>org.apache.nifi.documentation.xml</package>
+                <package>org.apache.nifi.expression</package>
+                <package>org.apache.nifi.flowfile</package>
+                <package>org.apache.nifi.flowfile.attributes</package>
+                <package>org.apache.nifi.kerberos</package>
+                <package>org.apache.nifi.logging</package>
+                <package>org.apache.nifi.parameter</package>
+                <package>org.apache.nifi.processor</package>
+                <package>org.apache.nifi.processor.exception</package>
+                <package>org.apache.nifi.processor.io</package>
+                <package>org.apache.nifi.processor.util</package>
+                <package>org.apache.nifi.processors.evtx</package>
+                <package>org.apache.nifi.processors.evtx.parser</package>
+                <package>org.apache.nifi.processors.evtx.parser.bxml</package>
+                <package>org.apache.nifi.processors.evtx.parser.bxml.value</package>
+                <package>org.apache.nifi.provenance</package>
+                <package>org.apache.nifi.registry</package>
+                <package>org.apache.nifi.registry.flow</package>
+                <package>org.apache.nifi.remote</package>
+                <package>org.apache.nifi.remote.exception</package>
+                <package>org.apache.nifi.remote.io</package>
+                <package>org.apache.nifi.remote.io.socket</package>
+                <package>org.apache.nifi.reporting</package>
+                <package>org.apache.nifi.scheduling</package>
+                <package>org.apache.nifi.search</package>
+                <package>org.apache.nifi.stream.io</package>
+                <package>org.apache.nifi.stream.io.exception</package>
+                <package>org.apache.nifi.stream.io.util</package>
+                <package>org.apache.nifi.util</package>
+                <package>org.apache.nifi.util.concurrency</package>
+                <package>org.apache.nifi.util.file</package>
+                <package>org.apache.nifi.util.file.classloader</package>
+                <package>org.apache.nifi.util.file.monitor</package>
+                <package>org.apache.nifi.util.search</package>
+                <package>org.apache.nifi.util.search.ahocorasick</package>
+                <package>org.apache.nifi.util.text</package>
+                <package>org.apache.nifi.util.timebuffer</package>
             </public-packages>
             <class-path-extension>
-                <runtime-relative-path>ext/jackson-databind-2.9.5.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/jackson-databind-2.9.5.jar</binary-origin>
+                <runtime-relative-path>ext/commons-codec-1.10.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-codec-1.10.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/httpclient-4.5.5.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/httpclient-4.5.5.jar</binary-origin>
-            </class-path-extension>
-            <class-path-extension>
-                <runtime-relative-path>ext/geoip2-2.12.0-javadoc.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/geoip2-2.12.0-javadoc.jar</binary-origin>
-            </class-path-extension>
-            <class-path-extension>
-                <runtime-relative-path>ext/jackson-core-2.9.5.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/jackson-core-2.9.5.jar</binary-origin>
+                <runtime-relative-path>ext/commons-io-2.6.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-io-2.6.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/commons-logging-1.2.jar</runtime-relative-path>
@@ -119,8 +218,8 @@
                 <binary-origin>release/modules/ext/geoip2-2.12.0.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/maxmind-db-1.2.2.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/maxmind-db-1.2.2.jar</binary-origin>
+                <runtime-relative-path>ext/httpclient-4.5.5.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/httpclient-4.5.5.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/httpcore-4.4.9.jar</runtime-relative-path>
@@ -131,12 +230,28 @@
                 <binary-origin>release/modules/ext/jackson-annotations-2.9.5.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/commons-codec-1.10.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/commons-codec-1.10.jar</binary-origin>
+                <runtime-relative-path>ext/jackson-core-2.9.5.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/jackson-core-2.9.5.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
-                <runtime-relative-path>ext/geoip2-2.12.0-sources.jar</runtime-relative-path>
-                <binary-origin>release/modules/ext/geoip2-2.12.0-sources.jar</binary-origin>
+                <runtime-relative-path>ext/jackson-databind-2.9.5.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/jackson-databind-2.9.5.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/maxmind-db-1.2.2.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/maxmind-db-1.2.2.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/nifi-api-1.11.4.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/nifi-api-1.11.4.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/nifi-evtx-processors-1.11.4.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/nifi-evtx-processors-1.11.4.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/nifi-utils-1.11.4.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/nifi-utils-1.11.4.jar</binary-origin>
             </class-path-extension>
         </data>
     </configuration>

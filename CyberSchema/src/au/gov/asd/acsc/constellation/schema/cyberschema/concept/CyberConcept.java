@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2019 Australian Signals Directorate
+ * Copyright 2010-2020 Australian Signals Directorate
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,15 +19,16 @@ import au.gov.asd.tac.constellation.graph.GraphElementType;
 import au.gov.asd.tac.constellation.graph.attribute.IntegerObjectAttributeDescription;
 import au.gov.asd.tac.constellation.graph.attribute.LongObjectAttributeDescription;
 import au.gov.asd.tac.constellation.graph.attribute.StringAttributeDescription;
-import au.gov.asd.tac.constellation.graph.schema.SchemaAttribute;
-import au.gov.asd.tac.constellation.graph.schema.SchemaConcept;
-import au.gov.asd.tac.constellation.graph.schema.SchemaVertexType;
-import au.gov.asd.tac.constellation.schema.analyticschema.concept.AnalyticConcept;
-
-import au.gov.asd.tac.constellation.visual.icons.AnalyticIconProvider;
-import au.gov.asd.tac.constellation.visual.icons.CharacterIconProvider;
-import au.gov.asd.tac.constellation.visual.icons.UserInterfaceIconProvider;
 import au.gov.asd.acsc.constellation.schema.cyberschema.icons.CyberIconProvider;
+import au.gov.asd.tac.constellation.graph.attribute.BooleanObjectAttributeDescription;
+import au.gov.asd.tac.constellation.graph.attribute.ZonedDateTimeAttributeDescription;
+import au.gov.asd.tac.constellation.graph.schema.analytic.concept.AnalyticConcept;
+import au.gov.asd.tac.constellation.graph.schema.attribute.SchemaAttribute;
+import au.gov.asd.tac.constellation.graph.schema.concept.SchemaConcept;
+import au.gov.asd.tac.constellation.graph.schema.type.SchemaVertexType;
+import au.gov.asd.tac.constellation.utilities.icon.AnalyticIconProvider;
+import au.gov.asd.tac.constellation.utilities.icon.CharacterIconProvider;
+import au.gov.asd.tac.constellation.utilities.icon.UserInterfaceIconProvider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -52,6 +53,16 @@ public class CyberConcept extends SchemaConcept {
     }
 
     public static class VertexType {
+        
+        
+        
+        public static final SchemaVertexType PROCESS = new SchemaVertexType.Builder("Process")
+                .setForegroundIcon(AnalyticIconProvider.MICROPROCESSOR)
+                .build();
+        
+        public static final SchemaVertexType CODE_FAMILY = new SchemaVertexType.Builder("Code Family")
+                .setForegroundIcon(AnalyticIconProvider.GROUP)
+                .build();
 
         public static final SchemaVertexType NETWORKBASED_TYPES = new SchemaVertexType.Builder("Network Based Types")
                 .setForegroundIcon(AnalyticIconProvider.SHIELD)
@@ -118,6 +129,13 @@ public class CyberConcept extends SchemaConcept {
                 .setSuperType(INCIDENT_TYPE)
                 .setForegroundIcon(AnalyticIconProvider.FINGERPRINT)
                 .build();
+        public static final SchemaVertexType SHA512 = new SchemaVertexType.Builder("SHA-512")
+                .setSuperType(AnalyticConcept.VertexType.HASH)
+                .build();
+        
+        public static final SchemaVertexType JA3 = new SchemaVertexType.Builder("JA3")
+                .setForegroundIcon(AnalyticIconProvider.SIGNAL)
+                .build();
 
         public static final SchemaVertexType FEATURE = new SchemaVertexType.Builder("Feature")
                 .setForegroundIcon(CyberIconProvider.FEATURE)
@@ -125,6 +143,14 @@ public class CyberConcept extends SchemaConcept {
 
         public static final SchemaVertexType STRING = new SchemaVertexType.Builder("String")
                 .setForegroundIcon(CharacterIconProvider.CHAR_0065)
+                .build();
+        
+        public static final SchemaVertexType SERVICE = new SchemaVertexType.Builder("Service")
+                .setForegroundIcon(AnalyticIconProvider.SERVER)
+                .build();
+        
+        public static final SchemaVertexType CERTIFICATE = new SchemaVertexType.Builder("Certificate")
+                .setForegroundIcon(AnalyticIconProvider.IDENTIFICATION)
                 .build();
 
     }
@@ -182,21 +208,35 @@ public class CyberConcept extends SchemaConcept {
         schemaVertexTypes.add(VertexType.INCIDENT_TYPE);
         schemaVertexTypes.add(VertexType.FILE);
         schemaVertexTypes.add(VertexType.CVE);
+        schemaVertexTypes.add(VertexType.PROCESS);
+        schemaVertexTypes.add(VertexType.CODE_FAMILY);
         schemaVertexTypes.add(VertexType.INCIDENT);
         schemaVertexTypes.add(VertexType.INTRUSION_SET);
         schemaVertexTypes.add(VertexType.OBSERVATION);
         schemaVertexTypes.add(VertexType.CYBER_EVENT);
         schemaVertexTypes.add(VertexType.ALERT_SOURCE);
+        schemaVertexTypes.add(VertexType.JA3);
         schemaVertexTypes.add(VertexType.ASSET);
         schemaVertexTypes.add(VertexType.PROJECT);
         schemaVertexTypes.add(VertexType.BANNER);
         schemaVertexTypes.add(VertexType.SIGNATURE);
         schemaVertexTypes.add(VertexType.FEATURE);
         schemaVertexTypes.add(VertexType.STRING);
+        schemaVertexTypes.add(VertexType.SERVICE);
+        schemaVertexTypes.add(VertexType.CERTIFICATE);
         return Collections.unmodifiableList(schemaVertexTypes);
     }
 
     public static class VertexAttribute {
+        
+        public static final SchemaAttribute FAMILY_TYPE = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Family Type")
+                .build();
+        
+        public static final SchemaAttribute VERDICT = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Verdict")
+                .build();
+        
+        public static final SchemaAttribute ANALYSIS_TIME = new SchemaAttribute.Builder(GraphElementType.VERTEX, ZonedDateTimeAttributeDescription.ATTRIBUTE_NAME, "Analysis Time")
+                .build();
 
         public static final SchemaAttribute OBSERVATION_TYPE = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Observation Type")
                 .setDescription("Observation Type")
@@ -212,6 +252,10 @@ public class CyberConcept extends SchemaConcept {
 
         public static final SchemaAttribute NATIONALITY = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Nationality")
                 .setDescription("Nationality")
+                .build();
+        
+        public static final SchemaAttribute OPERATING_SYSTEM = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Operating System")
+                .setDescription("Operating System")
                 .build();
 
         public static final SchemaAttribute COUNT = new SchemaAttribute.Builder(GraphElementType.VERTEX, IntegerObjectAttributeDescription.ATTRIBUTE_NAME, "Count")
@@ -248,6 +292,23 @@ public class CyberConcept extends SchemaConcept {
         public static final SchemaAttribute PROTOCOL = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Protocol")
                 .setDescription("Protocol")
                 .build();
+        
+        public static final SchemaAttribute CLASSIFICATION = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Classification")
+                .setDescription("Classification")
+                .build();
+        
+        public static final SchemaAttribute ACTOR = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Actor")
+                .setDescription("Actor")
+                .build();
+        
+        public static final SchemaAttribute CATEGORY = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Category")
+                .setDescription("Category")
+                .build();
+        
+        public static final SchemaAttribute TAGS = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Tags")
+                .setDescription("Tags")
+                .build();
+                
         public static final SchemaAttribute FEATURE_COUNT = new SchemaAttribute.Builder(GraphElementType.VERTEX, IntegerObjectAttributeDescription.ATTRIBUTE_NAME, "Feature Count")
                 .setDescription("Feature Count")
                 .build();
@@ -258,6 +319,16 @@ public class CyberConcept extends SchemaConcept {
         public static final SchemaAttribute SIZE = new SchemaAttribute.Builder(GraphElementType.VERTEX, IntegerObjectAttributeDescription.ATTRIBUTE_NAME, "Size")
                 .setDescription("Size")
                 .build();
+        public static final SchemaAttribute DETECTED = new SchemaAttribute.Builder(GraphElementType.VERTEX, BooleanObjectAttributeDescription.ATTRIBUTE_NAME, "Detected")
+                .build();
+        public static final SchemaAttribute RESULT = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "Result")
+                .build();
+        public static final SchemaAttribute VHASH = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "vHash")
+                .build();
+        public static final SchemaAttribute SSDEEP = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "ssdeep")
+                .build();
+        public static final SchemaAttribute IMPHASH = new SchemaAttribute.Builder(GraphElementType.VERTEX, StringAttributeDescription.ATTRIBUTE_NAME, "imphash")
+                .build();
 
     }
 
@@ -265,10 +336,23 @@ public class CyberConcept extends SchemaConcept {
     public Collection<SchemaAttribute> getSchemaAttributes() {
         final List<SchemaAttribute> attributes = new ArrayList<>();
         attributes.add(VertexAttribute.OBSERVATION_TYPE);
+        attributes.add(VertexAttribute.DETECTED);
+        attributes.add(VertexAttribute.RESULT);
+        attributes.add(VertexAttribute.VHASH);
+        attributes.add(VertexAttribute.SSDEEP);
+        attributes.add(VertexAttribute.IMPHASH);
         attributes.add(VertexAttribute.PROTOCOL);
         attributes.add(TransactionAttribute.PROTOCOL);
         attributes.add(VertexAttribute.SIGNATURE_ID);
+        attributes.add(VertexAttribute.ANALYSIS_TIME);
+        attributes.add(VertexAttribute.VERDICT);
+        attributes.add(VertexAttribute.FAMILY_TYPE);
         attributes.add(VertexAttribute.INCIDENT_ID);
+        attributes.add(VertexAttribute.ACTOR);
+        attributes.add(VertexAttribute.TAGS);
+        attributes.add(VertexAttribute.CATEGORY);
+        attributes.add(VertexAttribute.CLASSIFICATION);
+        attributes.add(VertexAttribute.OPERATING_SYSTEM);
         attributes.add(VertexAttribute.INCIDENT_TYPE);
         attributes.add(VertexAttribute.STATUS);
         attributes.add(VertexAttribute.NATIONALITY);

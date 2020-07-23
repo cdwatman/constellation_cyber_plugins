@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2019 Australian Signals Directorate
+ * Copyright 2010-2020 Australian Signals Directorate
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,62 @@ public class ACSCOptionsPanel extends javax.swing.JPanel {
     public ACSCOptionsPanel(final ACSCOptionsPanelController controller) {
         this.controller = controller;
         initComponents();
+    }
+    
+    public String getCrowdStrikeUsername() {
+        return crowdStrikeUsername.getText();
+    }
+
+    public void setCrowdStrikeUsername(final String username) {
+        crowdStrikeUsername.setText(username);
+    }
+    
+    public String getDomainToolsUsername() {
+        return domainToolsUsername.getText();
+    }
+    
+    public String getCrowdStrikeSecret() {
+        return crowdStrikeSecret.getText();
+    }
+
+    public void setCrowdStrikeSecret(final String secret) {
+        crowdStrikeSecret.setText(secret);
+    }
+
+    public void setDomainToolsUsername(final String username) {
+        domainToolsUsername.setText(username);
+    }
+    
+    public String getDomainToolsAPIKey() {
+        return domainToolsAPIKey.getText();
+    }
+
+    public void setDomainToolsAPIKey(final String apiKey) {
+        domainToolsAPIKey.setText(apiKey);
+    }
+    
+    public String getShodanAPIKey() {
+        return shodanAPIKey.getText();
+    }
+
+    public void setShodanAPIKey(final String apiKey) {
+        shodanAPIKey.setText(apiKey);
+    }
+    
+    public String getIntezerAPIKey() {
+        return intezerAPIKey.getText();
+    }
+
+    public void setIntezerAPIKey(final String apiKey) {
+        intezerAPIKey.setText(apiKey);
+    }
+    
+    public String getGreyNoiseAPIKey() {
+        return greyNoiseAPIKey.getText();
+    }
+
+    public void setGreyNoiseAPIKey(final String apiKey) {
+        greyNoiseAPIKey.setText(apiKey);
     }
 
     public String getMaxmindUserId() {
@@ -109,7 +165,7 @@ public class ACSCOptionsPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        maxmindPnl = new javax.swing.JPanel();
         maxmindUserIdLbl = new javax.swing.JLabel();
         maxmindUserId = new javax.swing.JTextField();
         maxmindAPIKeyLbl = new javax.swing.JLabel();
@@ -129,11 +185,30 @@ public class ACSCOptionsPanel extends javax.swing.JPanel {
         maxmindConnectionTypesDBLbl = new javax.swing.JLabel();
         maxmindConnectionTypeDB = new javax.swing.JTextField();
         maxmindConnectionTypeDBButton = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        virusTotalPnl = new javax.swing.JPanel();
         virusTotalUrlLbl = new javax.swing.JLabel();
         virusTotalUrl = new javax.swing.JTextField();
         virusTotalAPIKeyLbl = new javax.swing.JLabel();
         virusTotalAPIKey = new javax.swing.JTextField();
+        GreyNoisePnl = new javax.swing.JPanel();
+        greyNoiseAPIKeyLbl = new javax.swing.JLabel();
+        greyNoiseAPIKey = new javax.swing.JTextField();
+        IntezerPnl = new javax.swing.JPanel();
+        intezerAPIKeyLbl = new javax.swing.JLabel();
+        intezerAPIKey = new javax.swing.JTextField();
+        ShodanPnl = new javax.swing.JPanel();
+        shodanAPIKeyLbl = new javax.swing.JLabel();
+        shodanAPIKey = new javax.swing.JTextField();
+        DomainToolsPnl = new javax.swing.JPanel();
+        domainToolsAPIKeyLbl = new javax.swing.JLabel();
+        domainToolsAPIKey = new javax.swing.JTextField();
+        domainToolsUsernameLbl = new javax.swing.JLabel();
+        domainToolsUsername = new javax.swing.JTextField();
+        CrowdStrikePnl = new javax.swing.JPanel();
+        crowdStrikeSecretLbl = new javax.swing.JLabel();
+        crowdStrikeSecret = new javax.swing.JTextField();
+        crowdStrikeUsernameLbl = new javax.swing.JLabel();
+        crowdStrikeUsername = new javax.swing.JTextField();
 
         org.openide.awt.Mnemonics.setLocalizedText(maxmindUserIdLbl, org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.maxmindUserIdLbl.text")); // NOI18N
 
@@ -203,95 +278,95 @@ public class ACSCOptionsPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout maxmindPnlLayout = new javax.swing.GroupLayout(maxmindPnl);
+        maxmindPnl.setLayout(maxmindPnlLayout);
+        maxmindPnlLayout.setHorizontalGroup(
+            maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(maxmindPnlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(maxmindPnlLayout.createSequentialGroup()
+                        .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(maxmindUserIdLbl)
                             .addComponent(maxmindAPIKeyLbl)
                             .addComponent(maxmindCityDBLbl))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(maxmindPnlLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(maxmindCityDBButton, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(maxmindPnlLayout.createSequentialGroup()
+                                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(maxmindUserId)
                                     .addComponent(maxmindAPIKey, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, maxmindPnlLayout.createSequentialGroup()
+                        .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(maxmindAnonDBLbl)
                             .addComponent(maxmindISPDBLbl)
                             .addComponent(maxmindDomainDBLbl)
                             .addComponent(maxmindConnectionTypesDBLbl))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(maxmindConnectionTypeDB, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                        .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(maxmindPnlLayout.createSequentialGroup()
+                                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(maxmindConnectionTypeDB, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
                                     .addComponent(maxmindDomainDB))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(maxmindDomainDBButton, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(maxmindConnectionTypeDBButton, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(maxmindPnlLayout.createSequentialGroup()
+                                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(maxmindAnonDB)
                                     .addComponent(maxmindISPDB)
                                     .addComponent(maxmindCityDB))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(maxmindISPDBButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(maxmindAnonDBButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addGap(21, 21, 21))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        maxmindPnlLayout.setVerticalGroup(
+            maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(maxmindPnlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(maxmindUserIdLbl)
                     .addComponent(maxmindUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(maxmindAPIKeyLbl)
                     .addComponent(maxmindAPIKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(maxmindCityDBLbl)
                     .addComponent(maxmindCityDBButton)
                     .addComponent(maxmindCityDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(maxmindAnonDBLbl)
                     .addComponent(maxmindAnonDBButton)
                     .addComponent(maxmindAnonDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(maxmindISPDBLbl)
                     .addComponent(maxmindISPDBButton)
                     .addComponent(maxmindISPDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(maxmindDomainDBLbl)
                     .addComponent(maxmindDomainDBButton)
                     .addComponent(maxmindDomainDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(maxmindPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(maxmindConnectionTypesDBLbl)
                     .addComponent(maxmindConnectionTypeDBButton)
                     .addComponent(maxmindConnectionTypeDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.jPanel1.TabConstraints.tabTitle"), jPanel1); // NOI18N
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.maxmindPnl.TabConstraints.tabTitle"), maxmindPnl); // NOI18N
 
         org.openide.awt.Mnemonics.setLocalizedText(virusTotalUrlLbl, org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.virusTotalUrlLbl.text")); // NOI18N
 
@@ -301,36 +376,195 @@ public class ACSCOptionsPanel extends javax.swing.JPanel {
 
         virusTotalAPIKey.setText(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.virusTotalAPIKey.text")); // NOI18N
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout virusTotalPnlLayout = new javax.swing.GroupLayout(virusTotalPnl);
+        virusTotalPnl.setLayout(virusTotalPnlLayout);
+        virusTotalPnlLayout.setHorizontalGroup(
+            virusTotalPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(virusTotalPnlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(virusTotalPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(virusTotalUrlLbl)
                     .addComponent(virusTotalAPIKeyLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(virusTotalPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(virusTotalAPIKey)
-                    .addComponent(virusTotalUrl, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE))
+                    .addComponent(virusTotalUrl, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        virusTotalPnlLayout.setVerticalGroup(
+            virusTotalPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(virusTotalPnlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(virusTotalPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(virusTotalUrlLbl)
                     .addComponent(virusTotalUrl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(virusTotalPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(virusTotalAPIKeyLbl)
                     .addComponent(virusTotalAPIKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(295, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.virusTotalPnl.TabConstraints.tabTitle"), virusTotalPnl); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(greyNoiseAPIKeyLbl, org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.greyNoiseAPIKeyLbl.text")); // NOI18N
+
+        greyNoiseAPIKey.setText(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.greyNoiseAPIKey.text")); // NOI18N
+
+        javax.swing.GroupLayout GreyNoisePnlLayout = new javax.swing.GroupLayout(GreyNoisePnl);
+        GreyNoisePnl.setLayout(GreyNoisePnlLayout);
+        GreyNoisePnlLayout.setHorizontalGroup(
+            GreyNoisePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GreyNoisePnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(greyNoiseAPIKeyLbl)
+                .addGap(63, 63, 63)
+                .addComponent(greyNoiseAPIKey, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        GreyNoisePnlLayout.setVerticalGroup(
+            GreyNoisePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GreyNoisePnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GreyNoisePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(greyNoiseAPIKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(greyNoiseAPIKeyLbl))
+                .addContainerGap(316, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.GreyNoisePnl.TabConstraints.tabTitle"), GreyNoisePnl); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(intezerAPIKeyLbl, org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.intezerAPIKeyLbl.text")); // NOI18N
+
+        intezerAPIKey.setText(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.intezerAPIKey.text")); // NOI18N
+
+        javax.swing.GroupLayout IntezerPnlLayout = new javax.swing.GroupLayout(IntezerPnl);
+        IntezerPnl.setLayout(IntezerPnlLayout);
+        IntezerPnlLayout.setHorizontalGroup(
+            IntezerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IntezerPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(intezerAPIKeyLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(intezerAPIKey, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(256, 256, 256))
+        );
+        IntezerPnlLayout.setVerticalGroup(
+            IntezerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IntezerPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(IntezerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(intezerAPIKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(intezerAPIKeyLbl))
+                .addContainerGap(316, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.IntezerPnl.TabConstraints.tabTitle"), IntezerPnl); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(shodanAPIKeyLbl, org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.shodanAPIKeyLbl.text")); // NOI18N
+
+        shodanAPIKey.setText(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.shodanAPIKey.text")); // NOI18N
+
+        javax.swing.GroupLayout ShodanPnlLayout = new javax.swing.GroupLayout(ShodanPnl);
+        ShodanPnl.setLayout(ShodanPnlLayout);
+        ShodanPnlLayout.setHorizontalGroup(
+            ShodanPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShodanPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(shodanAPIKeyLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(shodanAPIKey, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(256, 256, 256))
+        );
+        ShodanPnlLayout.setVerticalGroup(
+            ShodanPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShodanPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ShodanPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(shodanAPIKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(shodanAPIKeyLbl))
+                .addContainerGap(316, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.ShodanPnl.TabConstraints.tabTitle"), ShodanPnl); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(domainToolsAPIKeyLbl, org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.domainToolsAPIKeyLbl.text")); // NOI18N
+
+        domainToolsAPIKey.setText(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.domainToolsAPIKey.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(domainToolsUsernameLbl, org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.domainToolsUsernameLbl.text")); // NOI18N
+
+        domainToolsUsername.setText(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.domainToolsUsername.text")); // NOI18N
+
+        javax.swing.GroupLayout DomainToolsPnlLayout = new javax.swing.GroupLayout(DomainToolsPnl);
+        DomainToolsPnl.setLayout(DomainToolsPnlLayout);
+        DomainToolsPnlLayout.setHorizontalGroup(
+            DomainToolsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DomainToolsPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(DomainToolsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(domainToolsUsernameLbl)
+                    .addComponent(domainToolsAPIKeyLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(DomainToolsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(domainToolsAPIKey, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                    .addComponent(domainToolsUsername))
+                .addContainerGap(77, Short.MAX_VALUE))
+        );
+        DomainToolsPnlLayout.setVerticalGroup(
+            DomainToolsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DomainToolsPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(DomainToolsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(domainToolsAPIKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(domainToolsAPIKeyLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(DomainToolsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(domainToolsUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(domainToolsUsernameLbl))
+                .addContainerGap(269, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.DomainToolsPnl.TabConstraints.tabTitle"), DomainToolsPnl); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(crowdStrikeSecretLbl, org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.crowdStrikeSecretLbl.text")); // NOI18N
+
+        crowdStrikeSecret.setText(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.crowdStrikeSecret.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(crowdStrikeUsernameLbl, org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.crowdStrikeUsernameLbl.text")); // NOI18N
+
+        crowdStrikeUsername.setText(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.crowdStrikeUsername.text")); // NOI18N
+
+        javax.swing.GroupLayout CrowdStrikePnlLayout = new javax.swing.GroupLayout(CrowdStrikePnl);
+        CrowdStrikePnl.setLayout(CrowdStrikePnlLayout);
+        CrowdStrikePnlLayout.setHorizontalGroup(
+            CrowdStrikePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrowdStrikePnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CrowdStrikePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(crowdStrikeUsernameLbl)
+                    .addComponent(crowdStrikeSecretLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CrowdStrikePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(crowdStrikeSecret, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                    .addComponent(crowdStrikeUsername))
+                .addContainerGap(77, Short.MAX_VALUE))
+        );
+        CrowdStrikePnlLayout.setVerticalGroup(
+            CrowdStrikePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrowdStrikePnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CrowdStrikePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(crowdStrikeSecret, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(crowdStrikeSecretLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(CrowdStrikePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(crowdStrikeUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(crowdStrikeUsernameLbl))
+                .addContainerGap(269, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.CrowdStrikePnl.TabConstraints.tabTitle"), CrowdStrikePnl); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -338,7 +572,7 @@ public class ACSCOptionsPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 697, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -348,6 +582,8 @@ public class ACSCOptionsPanel extends javax.swing.JPanel {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jTabbedPane1.getAccessibleContext().setAccessibleName(org.openide.util.NbBundle.getMessage(ACSCOptionsPanel.class, "ACSCOptionsPanel.jTabbedPane1.AccessibleContext.accessibleName")); // NOI18N
     }// </editor-fold>//GEN-END:initComponents
 
     private void maxmindConnectionTypeDBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maxmindConnectionTypeDBButtonActionPerformed
@@ -416,8 +652,23 @@ public class ACSCOptionsPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_maxmindCityDBButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel CrowdStrikePnl;
+    private javax.swing.JPanel DomainToolsPnl;
+    private javax.swing.JPanel GreyNoisePnl;
+    private javax.swing.JPanel IntezerPnl;
+    private javax.swing.JPanel ShodanPnl;
+    private javax.swing.JTextField crowdStrikeSecret;
+    private javax.swing.JLabel crowdStrikeSecretLbl;
+    private javax.swing.JTextField crowdStrikeUsername;
+    private javax.swing.JLabel crowdStrikeUsernameLbl;
+    private javax.swing.JTextField domainToolsAPIKey;
+    private javax.swing.JLabel domainToolsAPIKeyLbl;
+    private javax.swing.JTextField domainToolsUsername;
+    private javax.swing.JLabel domainToolsUsernameLbl;
+    private javax.swing.JTextField greyNoiseAPIKey;
+    private javax.swing.JLabel greyNoiseAPIKeyLbl;
+    private javax.swing.JTextField intezerAPIKey;
+    private javax.swing.JLabel intezerAPIKeyLbl;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField maxmindAPIKey;
     private javax.swing.JLabel maxmindAPIKeyLbl;
@@ -436,10 +687,14 @@ public class ACSCOptionsPanel extends javax.swing.JPanel {
     private javax.swing.JTextField maxmindISPDB;
     private javax.swing.JButton maxmindISPDBButton;
     private javax.swing.JLabel maxmindISPDBLbl;
+    private javax.swing.JPanel maxmindPnl;
     private javax.swing.JTextField maxmindUserId;
     private javax.swing.JLabel maxmindUserIdLbl;
+    private javax.swing.JTextField shodanAPIKey;
+    private javax.swing.JLabel shodanAPIKeyLbl;
     private javax.swing.JTextField virusTotalAPIKey;
     private javax.swing.JLabel virusTotalAPIKeyLbl;
+    private javax.swing.JPanel virusTotalPnl;
     private javax.swing.JTextField virusTotalUrl;
     private javax.swing.JLabel virusTotalUrlLbl;
     // End of variables declaration//GEN-END:variables

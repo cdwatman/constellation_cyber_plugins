@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2019 Australian Signals Directorate
+ * Copyright 2010-2020 Australian Signals Directorate
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,13 @@ public final class ACSCOptionsPanelController extends OptionsPanelController {
         acscOptionsPanel.setMaxmindConnectionTypeDB(prefs.get(ACSCPreferenceKeys.MAXMIND_CONNECTION_TYPE_DIR, ""));
         acscOptionsPanel.setVirusTotalUrl(prefs.get(ACSCPreferenceKeys.VIRUS_TOTAL_URL, "https://virustotal.com"));
         acscOptionsPanel.setVirusTotalAPIKey(prefs.get(ACSCPreferenceKeys.VIRUS_TOTAL_API_KEY, ""));
-
+        acscOptionsPanel.setGreyNoiseAPIKey(prefs.get(ACSCPreferenceKeys.GREYNOISE_API_KEY, ""));
+        acscOptionsPanel.setIntezerAPIKey(prefs.get(ACSCPreferenceKeys.INTEZER_API_KEY, ""));
+        acscOptionsPanel.setShodanAPIKey(prefs.get(ACSCPreferenceKeys.SHODAN_API_KEY, ""));
+        acscOptionsPanel.setDomainToolsAPIKey(prefs.get(ACSCPreferenceKeys.DOMAINTOOLS_API_KEY, ""));
+        acscOptionsPanel.setDomainToolsUsername(prefs.get(ACSCPreferenceKeys.DOMAINTOOLS_USERNAME, ""));
+        acscOptionsPanel.setCrowdStrikeSecret(prefs.get(ACSCPreferenceKeys.CROWDSTRIKE_SECRET, ""));
+        acscOptionsPanel.setCrowdStrikeUsername(prefs.get(ACSCPreferenceKeys.CROWDSTRIKE_USERNAME, ""));
     }
 
     @Override
@@ -76,6 +82,13 @@ public final class ACSCOptionsPanelController extends OptionsPanelController {
                 prefs.put(ACSCPreferenceKeys.MAXMIND_CONNECTION_TYPE_DIR, acscOptionsPanel.getMaxmindConnectionTypeDB());
                 prefs.put(ACSCPreferenceKeys.VIRUS_TOTAL_URL, acscOptionsPanel.getVirusTotalUrl());
                 prefs.put(ACSCPreferenceKeys.VIRUS_TOTAL_API_KEY, acscOptionsPanel.getVirusTotalAPIKey());
+                prefs.put(ACSCPreferenceKeys.GREYNOISE_API_KEY, acscOptionsPanel.getGreyNoiseAPIKey());
+                prefs.put(ACSCPreferenceKeys.INTEZER_API_KEY, acscOptionsPanel.getIntezerAPIKey());
+                prefs.put(ACSCPreferenceKeys.SHODAN_API_KEY, acscOptionsPanel.getShodanAPIKey());
+                prefs.put(ACSCPreferenceKeys.DOMAINTOOLS_API_KEY, acscOptionsPanel.getDomainToolsAPIKey());
+                prefs.put(ACSCPreferenceKeys.DOMAINTOOLS_USERNAME, acscOptionsPanel.getDomainToolsUsername());
+                prefs.put(ACSCPreferenceKeys.CROWDSTRIKE_SECRET, acscOptionsPanel.getCrowdStrikeSecret());
+                prefs.put(ACSCPreferenceKeys.CROWDSTRIKE_USERNAME, acscOptionsPanel.getCrowdStrikeUsername());
             }
         }
     }
@@ -102,6 +115,13 @@ public final class ACSCOptionsPanelController extends OptionsPanelController {
                 && (acscOptionsPanel.getMaxmindDomainDB() == null ? prefs.get(ACSCPreferenceKeys.MAXMIND_DOMAIN_DIR, "") == null : acscOptionsPanel.getMaxmindDomainDB().equals(prefs.get(ACSCPreferenceKeys.MAXMIND_DOMAIN_DIR, "")))
                 && (acscOptionsPanel.getVirusTotalUrl() == null ? prefs.get(ACSCPreferenceKeys.VIRUS_TOTAL_URL, "") == null : acscOptionsPanel.getVirusTotalUrl().equals(prefs.get(ACSCPreferenceKeys.VIRUS_TOTAL_URL, "")))
                 && (acscOptionsPanel.getVirusTotalAPIKey() == null ? prefs.get(ACSCPreferenceKeys.VIRUS_TOTAL_API_KEY, "") == null : acscOptionsPanel.getVirusTotalAPIKey().equals(prefs.get(ACSCPreferenceKeys.VIRUS_TOTAL_API_KEY, "")))
+                && (acscOptionsPanel.getGreyNoiseAPIKey() == null ? prefs.get(ACSCPreferenceKeys.GREYNOISE_API_KEY, "") == null : acscOptionsPanel.getGreyNoiseAPIKey().equals(prefs.get(ACSCPreferenceKeys.GREYNOISE_API_KEY, "")))
+                && (acscOptionsPanel.getIntezerAPIKey() == null ? prefs.get(ACSCPreferenceKeys.INTEZER_API_KEY, "") == null : acscOptionsPanel.getIntezerAPIKey().equals(prefs.get(ACSCPreferenceKeys.INTEZER_API_KEY, "")))
+                && (acscOptionsPanel.getShodanAPIKey() == null ? prefs.get(ACSCPreferenceKeys.SHODAN_API_KEY, "") == null : acscOptionsPanel.getShodanAPIKey().equals(prefs.get(ACSCPreferenceKeys.SHODAN_API_KEY, "")))
+                && (acscOptionsPanel.getDomainToolsAPIKey() == null ? prefs.get(ACSCPreferenceKeys.DOMAINTOOLS_API_KEY, "") == null : acscOptionsPanel.getDomainToolsAPIKey().equals(prefs.get(ACSCPreferenceKeys.DOMAINTOOLS_API_KEY, "")))
+                && (acscOptionsPanel.getDomainToolsUsername() == null ? prefs.get(ACSCPreferenceKeys.DOMAINTOOLS_USERNAME, "") == null : acscOptionsPanel.getDomainToolsUsername().equals(prefs.get(ACSCPreferenceKeys.DOMAINTOOLS_USERNAME, "")))
+                && (acscOptionsPanel.getCrowdStrikeSecret() == null ? prefs.get(ACSCPreferenceKeys.CROWDSTRIKE_SECRET, "") == null : acscOptionsPanel.getCrowdStrikeSecret().equals(prefs.get(ACSCPreferenceKeys.CROWDSTRIKE_SECRET, "")))
+                && (acscOptionsPanel.getCrowdStrikeUsername() == null ? prefs.get(ACSCPreferenceKeys.CROWDSTRIKE_USERNAME, "") == null : acscOptionsPanel.getCrowdStrikeUsername().equals(prefs.get(ACSCPreferenceKeys.CROWDSTRIKE_USERNAME, "")))
                 && (acscOptionsPanel.getMaxmindConnectionTypeDB() == null ? prefs.get(ACSCPreferenceKeys.MAXMIND_CONNECTION_TYPE_DIR, "") == null : acscOptionsPanel.getMaxmindConnectionTypeDB().equals(prefs.get(ACSCPreferenceKeys.MAXMIND_CONNECTION_TYPE_DIR, ""))));
 
         return changed;
@@ -132,5 +152,6 @@ public final class ACSCOptionsPanelController extends OptionsPanelController {
     @Override
     public HelpCtx getHelpCtx() {
         return new HelpCtx("au.gov.asd.acsc.constellation.preferences.acsc");
+        
     }
 }

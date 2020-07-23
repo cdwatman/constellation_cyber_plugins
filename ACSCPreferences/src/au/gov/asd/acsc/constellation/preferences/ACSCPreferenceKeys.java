@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2019 Australian Signals Directorate
+ * Copyright 2010-2020 Australian Signals Directorate
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,6 @@ package au.gov.asd.acsc.constellation.preferences;
 
 public final class ACSCPreferenceKeys {
 
-    /**
-     * Maxmind
-     */
     public static final String MAXMIND_USERID = "maxmindUserId";
     public static final String MAXMIND_LICENCEKEY = "maxmindLicenceKey";
 
@@ -31,7 +28,20 @@ public final class ACSCPreferenceKeys {
 
     public static final String VIRUS_TOTAL_URL = "virusTotalUrl";
     public static final String VIRUS_TOTAL_API_KEY = "virusTotalAPIKey";
-
+    
+    public static final String GREYNOISE_API_KEY = "greyNoiseAPIKey";
+    
+    public static final String INTEZER_API_KEY = "intezerAPIKey";
+    
+    public static final String SHODAN_API_KEY = "shodanAPIKey";
+    
+    public static final String DOMAINTOOLS_API_KEY = "domainToolsAPIKey";
+    public static final String DOMAINTOOLS_USERNAME = "domainToolsUsernameKey";
+    
+    public static final String CROWDSTRIKE_SECRET = "crowdStrikeSecret";
+    public static final String CROWDSTRIKE_USERNAME = "crowdStrikeUsername";
+    
+    
     private ACSCPreferenceKeys() {
     }
 }

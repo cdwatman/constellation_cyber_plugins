@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2019 Australian Signals Directorate
+ * Copyright 2010-2020 Australian Signals Directorate
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,14 @@ import au.gov.asd.acsc.constellation.preferences.ACSCPreferenceKeys;
 import au.gov.asd.tac.constellation.graph.processing.GraphRecordStore;
 import au.gov.asd.tac.constellation.graph.processing.GraphRecordStoreUtilities;
 import au.gov.asd.tac.constellation.graph.processing.RecordStore;
-import au.gov.asd.tac.constellation.graph.visual.concept.VisualConcept;
-import au.gov.asd.tac.constellation.pluginframework.Plugin;
-import au.gov.asd.tac.constellation.pluginframework.PluginException;
-import au.gov.asd.tac.constellation.pluginframework.PluginInteraction;
-import au.gov.asd.tac.constellation.pluginframework.PluginNotificationLevel;
-import au.gov.asd.tac.constellation.pluginframework.parameters.PluginParameters;
-import au.gov.asd.tac.constellation.schema.analyticschema.concept.AnalyticConcept;
-import au.gov.asd.tac.constellation.schema.analyticschema.concept.SpatialConcept;
+import au.gov.asd.tac.constellation.graph.schema.analytic.concept.AnalyticConcept;
+import au.gov.asd.tac.constellation.graph.schema.analytic.concept.SpatialConcept;
+import au.gov.asd.tac.constellation.graph.schema.visual.concept.VisualConcept;
+import au.gov.asd.tac.constellation.plugins.Plugin;
+import au.gov.asd.tac.constellation.plugins.PluginException;
+import au.gov.asd.tac.constellation.plugins.PluginInteraction;
+import au.gov.asd.tac.constellation.plugins.PluginNotificationLevel;
+import au.gov.asd.tac.constellation.plugins.parameters.PluginParameters;
 import au.gov.asd.tac.constellation.security.proxy.ConstellationHttpProxySelector;
 import au.gov.asd.tac.constellation.views.dataaccess.DataAccessPlugin;
 import au.gov.asd.tac.constellation.views.dataaccess.DataAccessPluginCoreType;
@@ -69,7 +69,7 @@ import org.openide.util.lookup.ServiceProviders;
     ,
     @ServiceProvider(service = Plugin.class)
 })
-@Messages("MaxmindPlugin=Maxmind IP Enrichment")
+@Messages("MaxmindPlugin=MaxMind IP Enrichment")
 public class MaxmindPlugin extends RecordStoreQueryPlugin implements DataAccessPlugin {
 
     private static final Logger LOGGER = Logger.getLogger(MaxmindPlugin.class.getName());
@@ -86,7 +86,7 @@ public class MaxmindPlugin extends RecordStoreQueryPlugin implements DataAccessP
 
     @Override
     public String getDescription() {
-        return "Query Maxmind API";
+        return "Query MaxMind";
     }
 
     @Override
@@ -200,7 +200,7 @@ public class MaxmindPlugin extends RecordStoreQueryPlugin implements DataAccessP
                     }
                 }
             } catch (IOException ex) {
-                interaction.notify(PluginNotificationLevel.ERROR, String.format("Exception querying the Maxmind API: %s", ex.getMessage()));
+                interaction.notify(PluginNotificationLevel.ERROR, String.format("Exception querying the MaxMind API: %s", ex.getMessage()));
                 return;
             } catch (GeoIp2Exception ex) {
                 interaction.notify(PluginNotificationLevel.ERROR, ex.getMessage());
@@ -275,13 +275,13 @@ public class MaxmindPlugin extends RecordStoreQueryPlugin implements DataAccessP
                                     results.set(GraphRecordStoreUtilities.SOURCE + MaxmindConcept.VertexAttribute.ASN, traits.getAutonomousSystemNumber().toString());
                                 }
                             } catch (AuthenticationException ex) {
-                                interaction.notify(PluginNotificationLevel.ERROR, "Failed to authenticate to the Maxmind API, please check your credentials.");
+                                interaction.notify(PluginNotificationLevel.ERROR, "Failed to authenticate to the MaxMind API, please check your credentials.");
                                 return;
                             } catch (UnknownHostException ex) {
-                                interaction.notify(PluginNotificationLevel.ERROR, "Unable to contact the Maxmind API, please check your network connectivity and proxy settings.");
+                                interaction.notify(PluginNotificationLevel.ERROR, "Unable to contact the MaxMind API, please check your network connectivity and proxy settings.");
                                 return;
                             } catch (IOException ex) {
-                                interaction.notify(PluginNotificationLevel.ERROR, String.format("Exception querying the Maxmind API: %s", ex.getMessage()));
+                                interaction.notify(PluginNotificationLevel.ERROR, String.format("Exception querying the MaxMind API: %s", ex.getMessage()));
                                 return;
                             } catch (GeoIp2Exception ex) {
                                 interaction.notify(PluginNotificationLevel.ERROR, ex.getMessage());
@@ -291,14 +291,13 @@ public class MaxmindPlugin extends RecordStoreQueryPlugin implements DataAccessP
                         }
                     }
                 } catch (IOException ex) {
-                    interaction.notify(PluginNotificationLevel.ERROR, "Unable to create the client to interact with the Maxmind API.\nPlease try again later, if you continue to see this error, contact your administrator.");
+                    interaction.notify(PluginNotificationLevel.ERROR, "Unable to create the client to interact with the MaxMind API.\nPlease try again later, if you continue to see this error, contact your administrator.");
                     Exceptions.printStackTrace(ex);
                     return;
                 }
                 break;
             }
         } catch (URISyntaxException ex) {
-            // should never occur as the maxmind URI is solid.
             Exceptions.printStackTrace(ex);
         }
     }

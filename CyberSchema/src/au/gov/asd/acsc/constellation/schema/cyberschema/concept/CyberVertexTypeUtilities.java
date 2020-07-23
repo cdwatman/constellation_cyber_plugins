@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2019 Australian Signals Directorate
+ * Copyright 2010-2020 Australian Signals Directorate
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,10 @@
  */
 package au.gov.asd.acsc.constellation.schema.cyberschema.concept;
 
-import au.gov.asd.tac.constellation.graph.schema.SchemaVertexType;
-
-import au.gov.asd.tac.constellation.visual.color.ConstellationColor;
-import au.gov.asd.tac.constellation.visual.icons.CharacterIconProvider;
-import au.gov.asd.tac.constellation.visual.icons.DefaultIconProvider;
+import au.gov.asd.tac.constellation.graph.schema.type.SchemaVertexType;
+import au.gov.asd.tac.constellation.utilities.color.ConstellationColor;
+import au.gov.asd.tac.constellation.utilities.icon.CharacterIconProvider;
+import au.gov.asd.tac.constellation.utilities.icon.DefaultIconProvider;
 import java.util.HashMap;
 import java.util.Map;
 
