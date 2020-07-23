@@ -138,7 +138,7 @@ public class CyberConcept extends SchemaConcept {
                 .build();
 
         public static final SchemaVertexType FEATURE = new SchemaVertexType.Builder("Feature")
-                .setForegroundIcon(CyberIconProvider.FEATURE)
+                .setForegroundIcon(AnalyticIconProvider.FLAME)
                 .build();
 
         public static final SchemaVertexType STRING = new SchemaVertexType.Builder("String")

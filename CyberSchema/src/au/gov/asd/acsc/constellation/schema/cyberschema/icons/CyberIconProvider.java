@@ -43,30 +43,6 @@ public class CyberIconProvider implements ConstellationIconProvider {
         return new ByteIconData(new byte[0]);
     }
 
-    public static final ConstellationIcon ZIP_FILE = new ConstellationIcon.Builder("Zip File", loadIcon("zip_file.png"))
-            .addCategory("Cyber")
-            .build();
-
-    public static final ConstellationIcon FEATURE = new ConstellationIcon.Builder("Feature", loadIcon("feature.jpg"))
-            .addCategory("Cyber")
-            .build();
-
-    public static final ConstellationIcon PDF = new ConstellationIcon.Builder("PDF", loadIcon("pdf.png"))
-            .addCategory("Cyber")
-            .build();
-
-    public static final ConstellationIcon PE = new ConstellationIcon.Builder("PE", loadIcon("pe.png"))
-            .addCategory("Cyber")
-            .build();
-
-    public static final ConstellationIcon RAR = new ConstellationIcon.Builder("RAR", loadIcon("rar.png"))
-            .addCategory("Cyber")
-            .build();
-
-    public static final ConstellationIcon XML = new ConstellationIcon.Builder("XML", loadIcon("xml.PNG"))
-            .addCategory("Cyber")
-            .build();
-
     public static final ConstellationIcon ATTACK_PATTERN = new ConstellationIcon.Builder("Attack Pattern", loadIcon("attack_pattern.png"))
             .addCategory("STIX")
             .build();
@@ -131,12 +107,6 @@ public class CyberIconProvider implements ConstellationIconProvider {
     @Override
     public List<ConstellationIcon> getIcons() {
         List<ConstellationIcon> cyberIcons = new ArrayList<>();
-        cyberIcons.add(ZIP_FILE);
-        cyberIcons.add(FEATURE);
-        cyberIcons.add(PDF);
-        cyberIcons.add(PE);
-        cyberIcons.add(RAR);
-        cyberIcons.add(XML);
         
         cyberIcons.add(ATTACK_PATTERN);
         cyberIcons.add(CAMPAIGN);
